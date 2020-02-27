@@ -10,14 +10,8 @@ class MyApp extends React.Component {
     return(
       <div>
         <h1> CATS! </h1>
-        <div className="container3">
-          <MyCatDescriptions/>
-            <div className="container2">
-              <MyCatBreeds/>
-                <div className="container1">
-                  <MyCatImages/>
-                </div>
-            </div>
+        <div className="container1">
+          <MyCatCards/>
         </div>
       </div>
     )
