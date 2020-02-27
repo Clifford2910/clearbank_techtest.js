@@ -1,46 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyCatImages from './CatImages'
 
 const API_KEY = '44e7905e-cb71-435f-8f16-9aac4539a871'
 
 
-class MyCats extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      url: [],
-    }
-  }
-
-  componentDidMount() {
-    fetch('https://api.thecatapi.com/v1/images/search?api_key=${API_KEY}')
-    .then((results) => {
-      return results.json();
-    }).then(data => {
-      console.log(data)
-      let url = data.map(function(pic) {
-        return(
-          <div key={pic.results}>
-            <img src={pic.url} />
-          </div>
-        )
-      })
-      this.setState({
-        url: url
-      });
-    })
-  }
-
+class MyApp extends React.Component {
   render() {
     return(
       <div className="container2">
         <div className="container1">
-          {this.state.url}
+          <MyCatImages/>
         </div>
       </div>
     )
   }
 }
 
-export default MyCats;
+export default MyApp;
