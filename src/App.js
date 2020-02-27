@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import MyCatImages from './CatImages'
 import MyCatBreeds from './BreedLists'
-import MyCatDescriptions from './DescriptionLists.js'
+import MyCatDescriptions from './DescriptionLists'
+import MyCatCards from './CatCards'
 
 class MyApp extends React.Component {
   render() {

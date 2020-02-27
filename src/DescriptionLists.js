@@ -30,7 +30,6 @@ class MyCatDescriptions extends React.Component {
       this.setState({
         description: description
       });
-      console.log(this.state.description)
     })
   }
 

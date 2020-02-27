@@ -4,22 +4,22 @@ import MyCatBreeds from './BreedLists'
 import MyCatDescriptions from './DescriptionLists.js'
 
 class MyCatCards extends React.Component {
-  render() {
-    return(
-      <div>
-        <h1> CATS! </h1>
-        <div className="container3">
-          <MyCatDescriptions/>
-            <div className="container2">
-              <MyCatBreeds/>
-                <div className="container1">
-                  <MyCatImages/>
-                </div>
-            </div>
-        </div>
-      </div>
-    )
+  constructor() {
+    super();
+    this.state = {
+      cats: []
+    }
   }
-}
+
+  render() {
+      return(
+        <div className="container2">
+          <div className="container1">
+            {this.state.url}
+          </div>
+        </div>
+      )
+    }
+  }
 
 export default MyCatCards;
