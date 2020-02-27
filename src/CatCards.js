@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
 import MyCatImages from './CatImages'
 import MyCatBreeds from './BreedLists'
 import MyCatDescriptions from './DescriptionLists.js'
 
-class MyApp extends React.Component {
+class MyCatCards extends React.Component {
   render() {
     return(
       <div>
@@ -23,4 +22,4 @@ class MyApp extends React.Component {
   }
 }
 
-export default MyApp;
+export default MyCatCards;

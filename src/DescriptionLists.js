@@ -2,11 +2,11 @@ import React from 'react';
 
 const API_KEY = '44e7905e-cb71-435f-8f16-9aac4539a871'
 
-class MyCatBreeds extends React.Component {
+class MyCatDescriptions extends React.Component {
   constructor() {
     super();
     this.state = {
-      breeds: [],
+      description: [],
     }
   }
 
@@ -20,16 +20,17 @@ class MyCatBreeds extends React.Component {
     .then((results) => {
       return results.json();
     }).then(data => {
-      let breeds = data.map(function(breed) {
+      let description = data.map(function(desc) {
         return(
-          <div key={breed.results}>
-            {breed.name}
+          <div key={desc.results}>
+            {desc.temperament}
           </div>
         )
       })
       this.setState({
-        breeds: breeds
+        description: description
       });
+      console.log(this.state.description)
     })
   }
 
@@ -38,7 +39,7 @@ class MyCatBreeds extends React.Component {
       <div className="container2">
         <div className="container1">
           <ul>
-           {this.state.breeds}
+           {this.state.description}
           </ul>
         </div>
       </div>
@@ -46,4 +47,4 @@ class MyCatBreeds extends React.Component {
   }
 }
 
-export default MyCatBreeds;
+export default MyCatDescriptions;
