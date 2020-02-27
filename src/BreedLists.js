@@ -2,16 +2,16 @@ import React from 'react';
 
 const API_KEY = '44e7905e-cb71-435f-8f16-9aac4539a871'
 
-class MyCatImages extends React.Component {
+class MyCatBreeds extends React.Component {
   constructor() {
     super();
     this.state = {
-      url: [],
+      breeds: [],
     }
   }
 
   componentDidMount() {
-    fetch(`https://api.thecatapi.com/v1/images/search?height=683&limit=5`, {
+    fetch(`https://api.thecatapi.com/v1/breeds`, {
       headers: {
         'x-api-key': API_KEY,
         'Content-Type': 'application/json'
@@ -20,15 +20,15 @@ class MyCatImages extends React.Component {
     .then((results) => {
       return results.json();
     }).then(data => {
-      let url = data.map(function(pic) {
+      let breeds = data.map(function(breed) {
         return(
-          <div key={pic.results}>
-            <img src={pic.url} />
+          <div key={breed.results}>
+            {breed.name}
           </div>
         )
       })
       this.setState({
-        url: url
+        breeds: breeds
       });
     })
   }
@@ -37,11 +37,13 @@ class MyCatImages extends React.Component {
     return(
       <div className="container2">
         <div className="container1">
-          {this.state.url}
+          <ul>
+            {this.state.breeds}
+          </ul>
         </div>
       </div>
     )
   }
 }
 
-export default MyCatImages;
+export default MyCatBreeds;
